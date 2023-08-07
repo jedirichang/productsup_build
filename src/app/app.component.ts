@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './services/data.service';
+import { takeUntil } from 'rxjs/operators'
+import { Subject } from 'rxjs';
+import { TableData } from './interfaces/tableData.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'productsupchallenge';
+  constructor(private dataService: DataService) {
+    this.dataService.initiateData();
+  }
 }

@@ -1,0 +1,21 @@
+.mainContent {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .leftContent {
+        width: 20%;
+        height: 100%;
+        position: relative;
+        box-shadow: 1px 0px 6px black;
+        border-top-right-radius: 10px;
+    }
+
+    .rightContent {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 1rem;
+    }
+}

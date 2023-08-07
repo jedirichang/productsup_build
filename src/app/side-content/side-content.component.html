@@ -1,0 +1,38 @@
+<div class="formGroup">
+    <button (click)="addFilter()">Add Filter</button>
+    <div [formGroup]="formGroup">
+        <ng-container formArrayName="filters">
+            <ng-container *ngFor="let filter of filterForm.controls; let i=index">
+                <div [formGroupName]="i" class="formContainer">
+                    <div class="close" (click)="removeFilter(i)">
+                        X
+                    </div>
+                    <div>
+                        <span>Key: </span>
+                        <select formControlName="key" class="formInput">
+                            <option [ngValue]="column?.columnDef" *ngFor="let column of columns">{{column?.header}}
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>Operator: </span>
+                        <select formControlName="operator" class="formInput">
+                            <option [ngValue]="operator" *ngFor="let operator of operators">
+                                {{operator}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="formInput">
+                        <span>Value: </span>
+                        <input formControlName="text" type="text">
+                    </div>
+                </div>
+            </ng-container>
+
+        </ng-container>
+    </div>
+    <ng-container *ngIf="filterForm.controls.length">
+        <button [disabled]="!filterForm.valid" class="actionButton" (click)="applyFilter()">Apply</button>
+        <button class="actionButton" (click)="clearForm()">Clear</button>
+    </ng-container>
+</div>

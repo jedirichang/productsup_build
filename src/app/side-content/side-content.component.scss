@@ -1,0 +1,23 @@
+.formGroup {
+    padding: 10px;
+
+    .formContainer {
+        padding: 5px;
+        border: 1px solid black;
+        margin-top: 10px;
+
+        .close {
+            float: right;
+            color: red;
+            cursor: pointer;
+        }
+
+        .formInput {
+            margin-top: 10px;
+        }
+    }
+    .actionButton{
+        margin-top: 10px;
+        width: 7rem;
+    }
+}
